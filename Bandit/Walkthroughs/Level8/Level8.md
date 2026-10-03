@@ -53,7 +53,7 @@ bandit8@bandit:~$ ls -a
 .  ..  .bash_logout  .bashrc  .profile  data.txt
 ~~~
 
-There's the target file `data.txt`, now we can know how many lines does it have.
+Here it is the target file `data.txt`, now we can know how many lines does it have.
 
 ~~~ bash
 bandit8@bandit:~$ grep -c '' data.txt
@@ -77,8 +77,9 @@ I used `sort` & `uniq --unique` because they filter the unique line(s) buried un
 ~~~ bash
 bandit8@bandit:~$ uniq -u data.txt
 ~~~
-It'll not supress any of the identical lines in the output, because in `data.txt` the lines are mixed up, the repeated ones are not already sort for `uniq` to filter them out, so we must sort the file before letting `uniq` cutting them.
+It'll not supress any of the identical lines in the output, because in `data.txt` the lines are mixed up, the repeated ones are not already sort for `uniq` to filter them out, so we must sort the file before letting `uniq` cut them.
 that's why we're using `sort data.txt | uniq -u`:
+
 `sort data.txt` sorts the lines so the identical ones end up next to each other, and the pipe `|` passes its output as the input of `uniq -u`, returning the only line that's not repeated in all the file (the password we're looking for).
 
 ---
