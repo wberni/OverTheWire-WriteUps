@@ -17,6 +17,8 @@
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ~~~
 
+<div align="center">
+
 | Field    | Value                         |
 | -------- | ----------------------------- |
 | Host     | `bandit.labs.overthewire.org` |
@@ -28,7 +30,7 @@ Never used SSH before? Start with the [connection guide](sshConnection_guide.md)
 
 ---
 
-<div align="center">
+
 
 | Level                                    | Skills Introduced                              | Language | Status |
 | ---------------------------------------- | ---------------------------------------------- | -------- | ------ |
