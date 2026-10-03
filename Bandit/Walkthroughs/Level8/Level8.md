@@ -96,3 +96,4 @@ that's why we're using `sort data.txt | uniq -u`:
 - **ALWAYS read the 'EXTRA' section in the man's document file** of every command I use, because then I get lost because I didn't read something as important as this: _"Note: uniq does not detect repeated lines unless they are adjacent."_
 - `sort [FILE] | uniq -u` is a standard Unix pattern for finding unique lines in a file with many duplicates.
 - `uniq` only detects **adjacent** duplicates, so always `sort` first when repeated lines may be mixed up. The pipe `|` is what makes this work: the output of `sort` becomes the input of `uniq`.
+- After Writing this level's documentation, I found out that `wc -l` is way better than `grep -c '' [FILE]`. I didn't use it here because I didn't know about it.

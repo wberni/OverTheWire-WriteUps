@@ -24,10 +24,10 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 ## Commands Used
 
 - `ssh` — Connects securely to the remote machine
-- `[comando]` — [Descripción]
-- `[comando]` — [Descripción]
-- `[comando]` — [Descripción]
 - `exit` — Close the SSH session
+- `ls` `la -a` — Shows the directory content including hidden files/directories
+- `file` — returns information about the type of file we're working with. ASCII text, data (binary), etc.
+- `grep` — returns lines that matches a pattern in a file or in a directory
 
 ---
 
@@ -45,46 +45,67 @@ Use the password you found at the end of [Bandit Level 8 → Level 9](../Level8/
 
 ---
 
-### Step 2 — [Título del paso]
+### Step 2 — Enumeration
+# list the home directory
+list the contents of the directory with `ls -a`, we'll find the target file (data.txt). To enumerate, we'll use `file` and `wc -l` (`-l` is the parameter to count lines) to get more information about the filetype in lines count, running `wc -l` right after `file` with '&&' pipe.
 
 ~~~ bash
-bandit9@bandit:~$ [comando]
-[salida]
+bandit9@bandit:~$ ls -a
+.  ..  .bash_logout  .bashrc  .profile  data.txt
+bandit9@bandit:~$ file data.txt && wc -l data.txt
+data.txt: data
+68 data.txt
 ~~~
 
-[Explicación breve de lo que se observa]
+The target's data type is `data`, is a Binary, non-human readable file like ASCII text. Display it in the terminal would just show a bunch of trash, so we're gonna use some tools.
+In the description of 'strings' man-file says:
+
+> **strings** prints the printable character sequences that are at least 4 characters long ... and are followed by an unprintable character.
+
+**strings** returns all the printable characters sequences that are followed by a non-printable character. This could be useful for printing all the string sequences in the file, and then figure out the password by suppressing the clutter that returns.
+This could be done if we pipe out the result of 'strings' into 'grep', using the argument '=='.
+
+The argument '=' is probably going to work, but the requirements talk about "preceded by several ‘=’ characters".
+
+ So may is convenient to use '==' as parameter instaed of '=', avoiding `grep` to return lines where a single '=' matches but is unrelated to the password we're looking for. Anyway, we're using both:
+
+ ---
+
+## Step 3: Getting the password
 
 ~~~ bash
-bandit9@bandit:~$ [comando]
-[salida]
+bandit9@bandit:~$ strings data.txt | grep '='
+h_=y
+^========== the
+:WnY=l
+=mTf
+========== password
+========== is
+qN=''
+Arx={
+Gd;e=
+]=QS
+#q1&=
+ZM=uj
+========== <password_here>
+=YqO
+9W=#
+j;m	=[
+=[xi
+mlj=1l
+bandit9@bandit:~$ strings data.txt | sort | grep '=='
+^========== the
+========== <password_here>
+========== is
+========== password
+bandit9@bandit:~$ 
 ~~~
 
-[Explicación breve de lo que se observa]
+> When I noticed that the password wasn't the only thing matching `=`, I used `sort` to group the related lines together. Anyway, It didn't have much effect because those four lines are the only ones that match the pattern `'=='`.
 
 ---
 
-### Step 3 — Solution
-
-~~~ bash
-bandit9@bandit:~$ [comando final]
-<password_here>
-~~~
-
-#### Explanation
-
-[Explicación de por qué se usó este comando y cómo funciona]
-
-[Explicación de qué pasaría con un enfoque alternativo / errores comunes]
-
-~~~ bash
-bandit9@bandit:~$ [comando alternativo]
-~~~
-
-[Explicación del resultado y por qué no sirve / por qué sí]
-
----
-
-#### Screenshots/
+#### Screenshots
 
 <img src = "../../Assets/LVL9/image1.png">
 <img src = "../../Assets/LVL9/image2.png">
@@ -93,7 +114,5 @@ bandit9@bandit:~$ [comando alternativo]
 
 ## Key Takeaways
 
-- [Aprendizaje clave 1]
-- [Aprendizaje clave 2]
-- [Aprendizaje clave 3]
-- [Aprendizaje clave 4]
+- Always get information about the file you're working with: `file data.txt && wc -l data.txt` as enumeration instaed `cat`
+- If we need to find information buried under the binary's data, you should use `string` to get all the readable characters sequences of the file you are working with. Then you can filter with `grep`
