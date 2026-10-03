@@ -6,8 +6,8 @@
 [OverTheWire](https://overthewire.org/wargames/) is a learning platform that provides resources to learn Linux and cybersecurity concepts through **Wargames**, CTF-style challenges where the main objective is to find the password for the next level, only using the shell connected via SSH to a server provided by OverTheWire.
 
 ## Usage guide of the repo
-This repo contains writeups of each level I complete, documenting my learning journey through the OverTheWire Wargames. Every top-level folder is a wargame (I'm currently working through Bandit), each wargame has it's own walkthroughs of each level.
-It's important for you to try yourself first before looking on a walkthrough. You start to learn when you are out of your comfort zone; try, read the manual of each command you may need to use (commands recomended by OverTheWire in every level) writing `man [COMMAND]` and `[COMMAND] --help` in the terminal.
+This repo contains writeups of each level I complete, documenting my learning journey through the OverTheWire Wargames. Every top-level folder is a wargame (I'm currently working through Bandit), each wargame has its own walkthroughs of each level.
+It's important for you to try yourself first before looking on a walkthrough. You start to learn when you are out of your comfort zone; try, read the manual of each command you may need to use (commands recommended by OverTheWire in every level) writing `man [COMMAND]` and `[COMMAND] --help` in the terminal.
 > ***There are no passwords in this repo**, passwords and screenshots are censured according to the [OverTheWire's rules](https://overthewire.org/rules/)*
 
 ## Prerequisites
