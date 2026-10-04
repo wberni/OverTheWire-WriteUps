@@ -43,7 +43,7 @@ Never used SSH before? Start with the [connection guide](sshConnection_guide.md)
 | [Level 6 → 7](Walkthroughs/Level6/Level6.md)   | `find` across `/`, `2>/dev/null`               | EN       | ✅     |
 | [Level 7 → 8](Walkthroughs/Level7/Level7.md)   | `grep`, searching large files                  | ES       | ✅     |
 | [Level 8 → 9](Walkthroughs/Level8/Level8.md)   | `sort`, `uniq`, finding the unique line        | EN       | ✅     |
-| [Level 9 → 10](Walkthroughs/Level9/Level9.md)  | `file`, `strings`, `grep`                      | EN       | ⏳     |
+| [Level 9 → 10](Walkthroughs/Level9/Level9.md)  | `file`, `strings`, `grep`                      | EN       | ✅     |
 | Level 10 → 11                            | `base64`, decoding data                        |          | ⏳     |
 | ...                                      | ...                                            |          | ⏳     |
 
