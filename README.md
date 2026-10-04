@@ -17,10 +17,10 @@ Most wargames here are played over SSH. If you've never connected to a remote se
 ### Folder structure
 ~~~
 OverTheWire/
-|-- README.md 
+|-- README.md      ← You are here
 |-- Bandit/
     |-- sshConnection_guide
-    |-- README.md           ← You are here
+    |-- README.md           
     |-- Assets/             ← Each level screenshots
     |   |-- LVL0/           
     |   |-- LVL1/
