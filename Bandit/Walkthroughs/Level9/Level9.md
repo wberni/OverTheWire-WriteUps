@@ -114,5 +114,5 @@ bandit9@bandit:~$
 
 ## Key Takeaways
 
-- Always get information about the file you're working with: `file data.txt && wc -l data.txt` as enumeration instaed `cat`
+- Always get information about the file you're working with: `file data.txt && wc -l data.txt` as enumeration instaed of `cat`
 - If we need to find information buried under the binary's data, you should use `string` to get all the readable characters sequences of the file you are working with. Then you can filter with `grep`
