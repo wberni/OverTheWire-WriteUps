@@ -44,7 +44,7 @@ Never used SSH before? Start with the [connection guide](sshConnection_guide.md)
 | [Level 7 → 8](Walkthroughs/Level7/Level7.md)   | `grep`, searching large files                  | ES       | ✅     |
 | [Level 8 → 9](Walkthroughs/Level8/Level8.md)   | `sort`, `uniq`, finding the unique line        | EN       | ✅     |
 | [Level 9 → 10](Walkthroughs/Level9/Level9.md)  | `file`, `strings`, `grep`                      | EN       | ✅     |
-| Level 10 → 11                            | `base64`, decoding data                        |          | ⏳     |
+| Level 10 → 11                            | `base64`, decoding data                        | EN (extra doc in ES)         | ✅     |
 | ...                                      | ...                                            |          | ⏳     |
 
 #### **Legend:** ✅ done · ⏳ pending

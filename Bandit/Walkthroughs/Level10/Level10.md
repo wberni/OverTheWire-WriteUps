@@ -65,7 +65,7 @@ bandit10@bandit:~$ man base64
 The target (`data.txt`) contains a text line encoded in base64.
 base64 is a codification that allows binaries to travel through the network safely without being corrupted or changed in the process: encodes bits into ASCII text, using numbers 0-9, lowercase/uppercase english letters, and '+' '/' characters. Base64 isn't an encryption. That's the reason why it doesn't require a key to get its content and at the same time, it isn't 'secure' in terms of cybersecurity. 'Securing' credentials, API keys and `.env` files just with base64 encoding, is a bad practice in the industry that some folks still do nowadays. And for hackers, is a vulnerability that can be exploited and we should always consider. 
 
- If you wanna know more about it, check out the [Base64 guide](base64Encoding.md) that I've made.
+ If you wanna know more about it, check out the [Base64 guide](base64Encoding.md) that I've made. It was written in spanish, I'll translate it to english later
 
 
 ---
