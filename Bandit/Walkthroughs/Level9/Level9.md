@@ -28,6 +28,7 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 - `ls` `la -a` — Shows the directory content including hidden files/directories
 - `file` — returns information about the type of file we're working with. ASCII text, data (binary), etc.
 - `grep` — returns lines that matches a pattern in a file or in a directory
+- `wc -l` — counts lines in a file
 
 ---
 
