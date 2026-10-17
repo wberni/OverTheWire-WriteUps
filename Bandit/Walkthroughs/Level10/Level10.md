@@ -5,7 +5,7 @@
 Commands you may need to solve this level
 
 ~~~ bash
-ls , cd , cat , file , du , find
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 ~~~
 
 ---
